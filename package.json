@@ -1,0 +1,19 @@
+{
+  "name": "understanding-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanjeffrey/understanding-typescript.git"
+  },
+  "author": "",
+  "license": "(MIT)",
+  "bugs": {
+    "url": "https://github.com/ryanjeffrey/understanding-typescript/issues"
+  },
+  "homepage": "https://github.com/ryanjeffrey/understanding-typescript#readme"
+}
