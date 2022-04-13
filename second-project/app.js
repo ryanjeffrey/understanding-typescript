@@ -1,9 +1,10 @@
 function add(n1, n2, showResult, phrase) {
+    var result = n1 + n2;
     if (showResult) {
-        console.log(phrase + n1 + n2);
+        console.log(phrase + result);
     }
     else {
-        return n1 + n2;
+        return result;
     }
 }
 var number1 = 5;
