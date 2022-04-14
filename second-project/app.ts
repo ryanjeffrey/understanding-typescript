@@ -1,4 +1,9 @@
-const person = {
+const person: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    role: [number, string];
+} = {
     name: 'Ryan',
     age: 34,
     hobbies: ['running', 'Chicago Bears'],
