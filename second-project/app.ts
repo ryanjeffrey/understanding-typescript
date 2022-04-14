@@ -1,7 +1,8 @@
 const person = {
     name: 'Ryan',
     age: 34,
-    hobbies: ['running', 'Chicago Bears']
+    hobbies: ['running', 'Chicago Bears'],
+    role: [2, 'author']
 };
 
 console.log(person.name);
