@@ -1,4 +1,4 @@
-// // Implicit type assignment
+// // Explicit type assignment
 // const person: {
 //     name: string;
 //     age: number;
