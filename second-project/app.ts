@@ -11,14 +11,20 @@
 //     role: [2, 'author']
 // };
 
+
+// Enum
+enum Role { ADMIN, READ_ONLY, AUTHOR };
+
 const person = {
     name: 'Maximilian',
     age: 30,
     hobbies: ['running', 'Chicago Bears'],
-    role: ADMIN
-};
+    role: Role.ADMIN
+}
 
-
+if (person.role === Role.AUTHOR) {
+    console.log('is author')
+}
 
 // person.role.push('admin');
 // person.role[0] = 10;
