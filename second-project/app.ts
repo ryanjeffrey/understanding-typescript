@@ -7,4 +7,10 @@ function printResult(num: number): void {
     console.log('Result: ' + num);
 }
 
-printResult(add(5, 12))
+printResult(add(5, 12));
+
+let combineValues: Function;
+
+combineValues = add;
+
+console.log(combineValues(8, 8));
