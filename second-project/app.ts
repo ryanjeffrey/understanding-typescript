@@ -10,6 +10,7 @@ function combine(
     } else {
         result = input1.toString() + input2.toString();
     }
+    return result;
 
     // if (resultConversion === 'as-number') {
     //     return +result;
