@@ -99,6 +99,6 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "exclude": [
-    "basics.ts", "functions.ts", "objects-arrays-enums.ts", "unions-aliases.ts", "unknown-never.ts", "**/*.dev.ts", "node_modules"
+    "./src/basics.ts", "./src/functions.ts", "./src/objects-arrays-enums.ts", "./src/unions-aliases.ts", "./src/unknown-never.ts", "**/*.dev.ts", "node_modules"
   ]
 }
