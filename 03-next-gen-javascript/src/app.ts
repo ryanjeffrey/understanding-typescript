@@ -15,8 +15,6 @@ age = 30;
 //     console.log(isOld);
 // }
 
-const add = (a: number, b: number) => {
-    return a + b;
-};
+const add = (a: number, b: number) =>  a + b;
 
 console.log(add(2, 5));
