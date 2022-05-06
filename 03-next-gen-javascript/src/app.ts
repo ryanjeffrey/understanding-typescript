@@ -26,3 +26,6 @@ if (button) {
 }
 
 printOutput(add(2, 5));
+
+const hobbies = ['Sports', 'Cooking'];
+const activeHobbies = ['Hiking'];
