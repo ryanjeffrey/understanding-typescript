@@ -1,8 +1,8 @@
-const userName = 'Ryan';
+// const userName = 'Ryan';
 
-let age = 34;
+// let age = 34;
 
-age = 30;
+// age = 30;
 
 // function add(a: number, b: number) {
 //     let result;
@@ -35,7 +35,7 @@ activeHobbies.push(...hobbies);
 console.log(activeHobbies);
 
 const person = {
-    name: 'Ryan',
+    firstName: 'Ryan',
     age: 77
 };
 
@@ -54,3 +54,8 @@ console.log(addedNumbers);
 const [hobby1, hobby2, ...remainingHobbies] = hobbies;
 
 console.log(hobbies, hobby1, hobby2);
+
+// Destructuring an object
+const { firstName, age } = person;
+
+console.log(firstName, age, person);
