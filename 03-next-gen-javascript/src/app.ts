@@ -49,3 +49,8 @@ const add = (...numbers: number[]) => {
 
 const addedNumbers = add(5, 10, 42, 12.222);
 console.log(addedNumbers);
+
+// Destructuring an array
+const [hobby1, hobby2, ...remainingHobbies] = hobbies;
+
+console.log(hobbies, hobby1, hobby2);
