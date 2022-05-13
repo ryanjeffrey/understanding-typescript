@@ -1,6 +1,7 @@
 "use strict";
 class Department {
     constructor(n) {
+        this.employees = [];
         this.name = n;
     }
     describe() {
