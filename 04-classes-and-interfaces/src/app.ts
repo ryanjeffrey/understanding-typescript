@@ -51,3 +51,9 @@ it.describe();
 it.printEmployeeInformation();
 
 console.log(it);
+
+const accounting = new AccountingDepartment('d2', []);
+
+accounting.addReport('Something went wrong...');
+
+accounting.printReports();
