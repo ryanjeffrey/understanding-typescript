@@ -18,8 +18,20 @@ class Department {
 }
 class ITDepartment extends Department {
     constructor(id, admins) {
-        super(id, "IT");
+        super(id, 'IT');
         this.admins = admins;
+    }
+}
+class AccountingDepartment extends Department {
+    constructor(id, reports) {
+        super(id, 'Accounting');
+        this.reports = reports;
+    }
+    addReport(text) {
+        this.reports.push(text);
+    }
+    printReports() {
+        console.log(this.reports);
     }
 }
 const it = new ITDepartment('d1', ['Justin']);
