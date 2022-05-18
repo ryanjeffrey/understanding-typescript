@@ -19,6 +19,7 @@ class Department {
         console.log(this.employees);
     }
 }
+Department.fiscalYear = 2023;
 class ITDepartment extends Department {
     constructor(id, admins) {
         super(id, 'IT');
@@ -58,7 +59,7 @@ class AccountingDepartment extends Department {
     }
 }
 const employee1 = Department.createEmployee('Ryan');
-console.log(employee1);
+console.log(employee1, Department.fiscalYear);
 const it = new ITDepartment('d1', ['Justin']);
 it.addEmployee('Ryan');
 it.addEmployee('Simone');

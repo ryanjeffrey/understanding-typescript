@@ -1,4 +1,5 @@
 class Department {
+    static fiscalYear = 2023;
     // name: string;
     protected employees: string[] = [];
 
@@ -73,7 +74,7 @@ class AccountingDepartment extends Department {
 }
 
 const employee1 = Department.createEmployee('Ryan');
-console.log(employee1);
+console.log(employee1, Department.fiscalYear);
 
 const it = new ITDepartment('d1', ['Justin'])
 
