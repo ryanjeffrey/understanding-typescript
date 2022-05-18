@@ -48,5 +48,8 @@ it.printEmployeeInformation();
 console.log(it);
 const accounting = new AccountingDepartment('d2', []);
 accounting.addReport('Something went wrong...');
+accounting.addEmployee('Ryan');
+accounting.addEmployee('Darnell');
 accounting.printReports();
+accounting.printEmployeeInformation();
 //# sourceMappingURL=app.js.map
