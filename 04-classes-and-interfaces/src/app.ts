@@ -2,7 +2,7 @@ interface Named {
     readonly name: string;
 }
 
-interface Greetable {
+interface Greetable extends Named {
     greet(phrase: string): void;
 }
 
