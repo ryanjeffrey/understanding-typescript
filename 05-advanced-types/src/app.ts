@@ -44,3 +44,22 @@ function printEmployeeInformation(employee: UnknownEmployee) {
 }
 
 printEmployeeInformation(e1)
+
+// More type guards
+class Car {
+    drive() {
+        console.log('Driving...')
+    }
+}
+
+class Truck {
+    drive() {
+        console.log('Driving...')
+    }
+
+    loadCargo(amount: number) {
+        console.log('Loading cargo...' + amount)
+    }
+}
+
+type Vehicle = Car | Truck;

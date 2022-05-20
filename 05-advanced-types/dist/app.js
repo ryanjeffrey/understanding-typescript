@@ -20,4 +20,17 @@ function printEmployeeInformation(employee) {
     }
 }
 printEmployeeInformation(e1);
+class Car {
+    drive() {
+        console.log('Driving...');
+    }
+}
+class Truck {
+    drive() {
+        console.log('Driving...');
+    }
+    loadCargo(amount) {
+        console.log('Loading cargo...' + amount);
+    }
+}
 //# sourceMappingURL=app.js.map
