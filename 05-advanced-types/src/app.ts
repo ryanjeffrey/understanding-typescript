@@ -9,3 +9,9 @@ type Employee = {
 };
 
 type ElevatedEmployee = Admin & Employee;
+
+const e1: ElevatedEmployee = {
+    name: 'Ryan',
+    privileges: ['create-server'],
+    startDate: new Date()
+}
