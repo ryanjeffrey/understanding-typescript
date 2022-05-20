@@ -1,3 +1,4 @@
+// Intersection types
 type Admin = {
     name: string;
     privileges: string[];
@@ -16,7 +17,7 @@ const e1: ElevatedEmployee = {
     startDate: new Date()
 }
 
-
+// Intersection of union types
 type Combinable = string | number;
 type Numeric = number | boolean;
 
