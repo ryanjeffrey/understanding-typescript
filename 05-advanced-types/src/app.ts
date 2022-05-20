@@ -7,3 +7,5 @@ type Employee = {
     name: string;
     startDate: Date;
 };
+
+type ElevatedEmployee = Admin & Employee;
