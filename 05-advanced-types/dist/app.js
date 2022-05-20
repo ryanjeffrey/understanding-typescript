@@ -10,4 +10,13 @@ function add(a, b) {
     }
     return a + b;
 }
+function printEmployeeInformation(employee) {
+    console.log('Name: ' + employee.name);
+    if ('privileges' in employee) {
+        console.log('Privileges: ' + employee.privileges);
+    }
+    if ('startDate' in employee) {
+        console.log('Start Date: ' + employee.startDate);
+    }
+}
 //# sourceMappingURL=app.js.map

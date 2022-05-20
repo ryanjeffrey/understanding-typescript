@@ -30,3 +30,15 @@ function add(a: Combinable, b: Combinable) {
     }
     return a + b;
 }
+
+type UnknownEmployee = Employee | Admin;
+
+function printEmployeeInformation(employee: UnknownEmployee) {
+    console.log('Name: ' + employee.name);
+    if ('privileges' in employee) {
+        console.log('Privileges: ' + employee.privileges)
+    }
+    if ('startDate' in employee) {
+        console.log('Start Date: ' + employee.startDate)
+    }
+}
