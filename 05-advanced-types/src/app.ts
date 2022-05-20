@@ -42,3 +42,5 @@ function printEmployeeInformation(employee: UnknownEmployee) {
         console.log('Start Date: ' + employee.startDate)
     }
 }
+
+printEmployeeInformation(e1)

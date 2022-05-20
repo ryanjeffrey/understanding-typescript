@@ -19,4 +19,5 @@ function printEmployeeInformation(employee) {
         console.log('Start Date: ' + employee.startDate);
     }
 }
+printEmployeeInformation(e1);
 //# sourceMappingURL=app.js.map
