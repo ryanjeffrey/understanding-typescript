@@ -138,3 +138,10 @@ const fetchedUserData = {
 }
 
 console.log(fetchedUserData?.job?.title)
+
+// Nullish coalescing
+const userInput = undefined;
+// If the userInput is null or undefined, output the fallback
+const storedData = userInput ?? 'DEFAULT';
+
+console.log(storedData);
