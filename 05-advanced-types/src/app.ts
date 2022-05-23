@@ -76,3 +76,14 @@ function useVehicle(vehicle: Vehicle) {
 
 useVehicle(v1);
 useVehicle(v2);
+
+// Discriminated unions
+interface Bird {
+    flyingSpeed: number;
+}
+
+interface Horse {
+    runningSpeed: number;
+}
+
+type Animal = Bird | Horse;
