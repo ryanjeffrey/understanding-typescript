@@ -129,3 +129,12 @@ const errorMessage: ErrorContainer = {
     email: 'Not a valid email.',
     username: 'User name must start with a capital letter.'
 }
+
+// Optional chaining
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Ryan',
+    job: { title: 'Partner', description: 'Conjure' }
+}
+
+console.log(fetchedUserData?.job?.title)

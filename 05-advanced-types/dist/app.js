@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 const e1 = {
     name: 'Ryan',
     privileges: ['create-server'],
@@ -65,4 +66,10 @@ const errorMessage = {
     email: 'Not a valid email.',
     username: 'User name must start with a capital letter.'
 };
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Ryan',
+    job: { title: 'Partner', description: 'Conjure' }
+};
+console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
 //# sourceMappingURL=app.js.map
