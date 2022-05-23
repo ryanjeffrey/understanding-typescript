@@ -10,6 +10,8 @@ function add(a, b) {
     }
     return a + b;
 }
+const result = add('Ryan', ' Smith');
+result.split(' ');
 function printEmployeeInformation(employee) {
     console.log('Name: ' + employee.name);
     if ('privileges' in employee) {
