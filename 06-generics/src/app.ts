@@ -1,1 +1,1 @@
-// Code goes here!
+const names: Array<string> = [];
