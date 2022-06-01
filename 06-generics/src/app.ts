@@ -16,3 +16,19 @@ function merge<T extends object, U extends object>(objectA: T, objectB: U) {
 
 const mergedObject = merge({name: 'Gale'}, {number: 40})
 console.log(mergedObject.number)
+
+interface Lengthy {
+    length: number
+}
+
+function countAndDescribe<T extends Lengthy>(element: T) {
+    let descriptionText = 'No value.'
+    if (element.length === 1) {
+        descriptionText = '1 element.'
+    } else if (element.length > 1) {
+        descriptionText = element.length + ' elements.'
+    }
+    return [element, descriptionText]
+}
+
+console.log(countAndDescribe('Hi there!'))
