@@ -15,3 +15,4 @@ function merge<T, U>(objectA: T, objectB: U) {
 }
 
 const mergedObject = merge({name: 'Gale'}, {number: 40})
+console.log(mergedObject.number)
