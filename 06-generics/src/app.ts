@@ -10,7 +10,7 @@
 //   data.split(" ");
 // });
 
-function merge<T, U>(objectA: T, objectB: U) {
+function merge<T extends object, U extends object>(objectA: T, objectB: U) {
     return Object.assign(objectA, objectB)
 }
 
