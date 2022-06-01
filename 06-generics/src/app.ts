@@ -21,7 +21,7 @@ interface Lengthy {
     length: number
 }
 
-function countAndDescribe<T extends Lengthy>(element: T) {
+function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
     let descriptionText = 'No value.'
     if (element.length === 1) {
         descriptionText = '1 element.'
