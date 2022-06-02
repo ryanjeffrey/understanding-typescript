@@ -17,6 +17,8 @@ function merge<T extends object, U extends object>(objectA: T, objectB: U) {
 const mergedObject = merge({name: 'Gale'}, {number: 40})
 console.log(mergedObject.number)
 
+//
+
 interface Lengthy {
     length: number
 }
@@ -32,3 +34,11 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
 }
 
 console.log(countAndDescribe('Hi there!'))
+
+//
+
+function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) {
+    return 'Value: ' + obj[key]
+}
+
+extractAndConvert({ name: 'Walter' }, 'name')
