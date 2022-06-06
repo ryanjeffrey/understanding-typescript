@@ -66,3 +66,5 @@ textStorage.addItem('Brian')
 textStorage.addItem('Lance')
 textStorage.removeItem('Brian')
 console.log(textStorage.getItems())
+
+const numberStorage = new DataStorage<number>();
