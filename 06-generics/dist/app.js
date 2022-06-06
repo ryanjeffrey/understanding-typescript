@@ -39,4 +39,11 @@ textStorage.addItem('Lance');
 textStorage.removeItem('Brian');
 console.log(textStorage.getItems());
 const numberStorage = new DataStorage();
+function createCourseGoal(title, description, date) {
+    let courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUntil = date;
+    return courseGoal;
+}
 //# sourceMappingURL=app.js.map
