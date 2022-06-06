@@ -1,3 +1,8 @@
+function Logger(target: Function) {
+    console.log('Logging...')
+    console.log(target)
+}
+
 class Person {
     name = 'Darnell';
 
