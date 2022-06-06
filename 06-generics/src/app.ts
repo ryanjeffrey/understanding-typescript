@@ -60,3 +60,9 @@ class DataStorage<T> {
         return [...this.data];
     }
 }
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem('Brian')
+textStorage.addItem('Lance')
+textStorage.removeItem('Brian')
+console.log(textStorage.getItems())
