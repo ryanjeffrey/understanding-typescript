@@ -3,6 +3,7 @@ function Logger(target: Function) {
     console.log(target)
 }
 
+@Logger
 class Person {
     name = 'Darnell';
 
