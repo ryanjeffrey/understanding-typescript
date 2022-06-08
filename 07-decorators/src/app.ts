@@ -31,3 +31,19 @@ class Person {
 const pers = new Person()
 
 console.log(pers)
+
+// 
+
+class Product {
+    title: string;
+    price: number;
+
+    constructor(t: string, p: number) {
+        this.title = t;
+        this.price = p;
+    }
+
+    getPriceWithTax(tax: number) {
+        return this.price * (1 + tax)
+    }
+}

@@ -35,4 +35,13 @@ Person = __decorate([
 ], Person);
 const pers = new Person();
 console.log(pers);
+class Product {
+    constructor(t, p) {
+        this.title = t;
+        this.price = p;
+    }
+    getPriceWithTax(tax) {
+        return this.price * (1 + tax);
+    }
+}
 //# sourceMappingURL=app.js.map
