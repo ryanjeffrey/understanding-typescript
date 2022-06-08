@@ -43,6 +43,10 @@ function Log2(logTarget, name, descriptor) {
     console.log('ACCESSOR DECORATOR');
     console.log(logTarget, name, descriptor);
 }
+function Log3(logTarget, name, descriptor) {
+    console.log('METHOD DECORATOR');
+    console.log(logTarget, name, descriptor);
+}
 class Product {
     constructor(t, p) {
         this.title = t;
@@ -66,4 +70,7 @@ __decorate([
 __decorate([
     Log2
 ], Product.prototype, "price", null);
+__decorate([
+    Log3
+], Product.prototype, "getPriceWithTax", null);
 //# sourceMappingURL=app.js.map
