@@ -38,10 +38,18 @@ console.log(pers);
 class Product {
     constructor(t, p) {
         this.title = t;
-        this.price = p;
+        this._price = p;
+    }
+    set price(value) {
+        if (value > 0) {
+            this._price = value;
+        }
+        else {
+            throw new Error('Invalid price - should be a positive number.');
+        }
     }
     getPriceWithTax(tax) {
-        return this.price * (1 + tax);
+        return this._price * (1 + tax);
     }
 }
 //# sourceMappingURL=app.js.map
