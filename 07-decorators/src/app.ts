@@ -39,11 +39,17 @@ function Log(logTarget: any, propertyName: string | symbol) {
     console.log(logTarget, propertyName)
 }
 
+function Log2(logTarget: any, name: string, descriptor: PropertyDescriptor) {
+    console.log('ACCESSOR DECORATOR');
+    console.log(logTarget, name, descriptor)
+}
+
 class Product {
     @Log
     title: string;
     private _price: number;
 
+    @Log2
     set price(value: number) {
         if (value > 0) {
             this._price = value;

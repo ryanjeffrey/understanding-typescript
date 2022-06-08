@@ -39,6 +39,10 @@ function Log(logTarget, propertyName) {
     console.log('PROPERTY DECORATOR');
     console.log(logTarget, propertyName);
 }
+function Log2(logTarget, name, descriptor) {
+    console.log('ACCESSOR DECORATOR');
+    console.log(logTarget, name, descriptor);
+}
 class Product {
     constructor(t, p) {
         this.title = t;
@@ -59,4 +63,7 @@ class Product {
 __decorate([
     Log
 ], Product.prototype, "title", void 0);
+__decorate([
+    Log2
+], Product.prototype, "price", null);
 //# sourceMappingURL=app.js.map
