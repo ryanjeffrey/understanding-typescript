@@ -6,10 +6,12 @@ function Logger(logString: string) {
 }
 
 function WithTemplate(template:string, hookId: string) {
-    return function(_: Function) {
+    return function(target: any) {
         const hookElement = document.getElementById(hookId);
+        const p = new target();
         if (hookElement) {
-            hookElement.innerHTML = template
+            hookElement.innerHTML = template;
+            hookElement.querySelector('h1')!.textContent = p.name;
         }
     }
 }

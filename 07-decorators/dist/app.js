@@ -12,10 +12,12 @@ function Logger(logString) {
     };
 }
 function WithTemplate(template, hookId) {
-    return function (_) {
+    return function (target) {
         const hookElement = document.getElementById(hookId);
+        const p = new target();
         if (hookElement) {
             hookElement.innerHTML = template;
+            hookElement.querySelector('h1').textContent = p.name;
         }
     };
 }
