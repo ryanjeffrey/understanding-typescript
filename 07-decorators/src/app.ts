@@ -97,6 +97,7 @@ function Autobind(_: any, _2: string, descriptor: PropertyDescriptor) {
 class Printer {
     message = 'This works!'
 
+    @Autobind
     showMessage() {
         console.log(this.message)
     }

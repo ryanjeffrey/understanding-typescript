@@ -101,6 +101,9 @@ class Printer {
         console.log(this.message);
     }
 }
+__decorate([
+    Autobind
+], Printer.prototype, "showMessage", null);
 const p = new Printer();
 const button = document.querySelector('button');
 button.addEventListener('click', p.showMessage);
