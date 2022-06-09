@@ -78,3 +78,13 @@ class Product {
         return this._price * (1 + tax)
     }
 }
+
+// 
+
+class Printer {
+    message = 'This works!'
+
+    showMessage() {
+        console.log(this.message)
+    }
+}

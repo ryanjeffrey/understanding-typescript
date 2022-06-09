@@ -81,4 +81,12 @@ __decorate([
     Log3,
     __param(0, Log4)
 ], Product.prototype, "getPriceWithTax", null);
+class Printer {
+    constructor() {
+        this.message = 'This works!';
+    }
+    showMessage() {
+        console.log(this.message);
+    }
+}
 //# sourceMappingURL=app.js.map
