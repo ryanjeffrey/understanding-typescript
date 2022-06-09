@@ -81,6 +81,18 @@ __decorate([
     Log3,
     __param(0, Log4)
 ], Product.prototype, "getPriceWithTax", null);
+function Autobind(_, _2, descriptor) {
+    const originalMethod = descriptor.value;
+    const adjustedDescriptor = {
+        configurable: true,
+        enumerable: false,
+        get() {
+            const boundFunction = originalMethod.bind(this);
+            return boundFunction;
+        }
+    };
+    return adjustedDescriptor;
+}
 class Printer {
     constructor() {
         this.message = 'This works!';
