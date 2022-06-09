@@ -107,6 +107,7 @@ __decorate([
 const p = new Printer();
 const button = document.querySelector('button');
 button.addEventListener('click', p.showMessage);
+const registeredValidators = {};
 class Course {
     constructor(t, p) {
         this.title = t;

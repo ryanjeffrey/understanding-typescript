@@ -110,6 +110,14 @@ button.addEventListener('click', p.showMessage);
 
 // 
 
+interface ValidatorConfig {
+    [property: string]: {
+        [validatableProp: string]: string[]
+    }
+}
+
+const registeredValidators: ValidatorConfig = {};
+
 class Course {
     title: string;
     price: number;
