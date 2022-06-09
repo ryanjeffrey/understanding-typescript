@@ -119,3 +119,16 @@ class Course {
         this.price = p;
     }
 }
+
+const courseForm = document.querySelector('form')!;
+courseForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const titleElement = document.getElementById('title') as HTMLInputElement;
+    const priceElement = document.getElementById('price') as HTMLInputElement;
+
+    const title = titleElement.value;
+    const price = +priceElement.value;
+
+    const createdCourse = new Course(title, price);
+    console.log(createdCourse);
+})
