@@ -108,6 +108,16 @@ const p = new Printer();
 const button = document.querySelector('button');
 button.addEventListener('click', p.showMessage);
 const registeredValidators = {};
+function Required(target, propName) {
+    registeredValidators[target.constructor.name] = {
+        [propName]: ['required']
+    };
+}
+function PositiveNumber(target, propName) {
+    registeredValidators[target.constructor.name] = {
+        [propName]: ['positive']
+    };
+}
 class Course {
     constructor(t, p) {
         this.title = t;
