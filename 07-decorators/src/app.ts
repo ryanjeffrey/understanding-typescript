@@ -131,7 +131,9 @@ function PositiveNumber(target: any, propName: string) {
 }
 
 class Course {
+    @Required
     title: string;
+    @PositiveNumber
     price: number;
 
     constructor(t: string, p: number) {

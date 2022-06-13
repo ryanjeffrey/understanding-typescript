@@ -124,6 +124,12 @@ class Course {
         this.price = p;
     }
 }
+__decorate([
+    Required
+], Course.prototype, "title", void 0);
+__decorate([
+    PositiveNumber
+], Course.prototype, "price", void 0);
 const courseForm = document.querySelector('form');
 courseForm.addEventListener('submit', event => {
     event.preventDefault();
