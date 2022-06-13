@@ -130,6 +130,27 @@ function PositiveNumber(target: any, propName: string) {
     }
 }
 
+function validate(obj: any) {
+    const objectValidatorConfig = registeredValidators[obj.constructor.name];
+    if (!objectValidatorConfig) {
+        return true;
+    }
+    let isValid = true;
+    for (const prop in objectValidatorConfig) {
+        for (const validator of objectValidatorConfig[prop]) {
+            switch (validator) {
+                case 'required':
+                    isValid = isValid && !!obj[prop];
+                    break;
+                case 'positive':
+                    isValid = isValid && obj[prop] > 0;
+                    break;
+            }
+        }
+    }
+    return true;
+}
+
 class Course {
     @Required
     title: string;
