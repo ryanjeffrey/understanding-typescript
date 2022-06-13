@@ -5,6 +5,10 @@ class ProjectInput {
         this.hostElement = document.getElementById('app');
         const importedNode = document.importNode(this.templateElement.content, true);
         this.element = importedNode.firstElementChild;
+        this.attach();
+    }
+    attach() {
+        this.hostElement.insertAdjacentElement('afterbegin', this.element);
     }
 }
 //# sourceMappingURL=app.js.map
