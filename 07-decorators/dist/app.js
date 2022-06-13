@@ -158,6 +158,10 @@ courseForm.addEventListener('submit', event => {
     const title = titleElement.value;
     const price = +priceElement.value;
     const createdCourse = new Course(title, price);
+    if (!validate(createdCourse)) {
+        alert('Invalid input, please try again.');
+        return;
+    }
     console.log(createdCourse);
 });
 //# sourceMappingURL=app.js.map
