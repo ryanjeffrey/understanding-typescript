@@ -132,7 +132,7 @@ function validate(obj) {
             }
         }
     }
-    return true;
+    return isValid;
 }
 class Course {
     constructor(t, p) {

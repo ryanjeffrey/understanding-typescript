@@ -150,7 +150,7 @@ function validate(obj: any) {
             }
         }
     }
-    return true;
+    return isValid;
 }
 
 class Course {
