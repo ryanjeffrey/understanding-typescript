@@ -1,3 +1,18 @@
+// Project State Management
+class ProjectState {
+  private projects: any[] = [];
+
+  addProject(title: string, description: string, numberOfPeople: number) {
+    const newProject = {
+      id: Math.random().toString(),
+      title: title,
+      description: description,
+      people: numberOfPeople
+    };
+    this.projects.push(newProject);
+  }
+}
+
 // Validation
 interface Validatable {
   value: string | number;
