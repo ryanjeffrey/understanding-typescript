@@ -58,7 +58,7 @@ class ProjectList {
     renderContent() {
         const listId = `${this.type}-projects-list`;
         this.element.querySelector("ul").id = listId;
-        this.element.querySelector("h2").textContent = this.type.toUpperCase + " PROJECTS";
+        this.element.querySelector("h2").textContent = this.type.toUpperCase() + " PROJECTS";
     }
 }
 class ProjectInput {
@@ -128,4 +128,6 @@ __decorate([
     autobind
 ], ProjectInput.prototype, "submitHandler", null);
 const projectInput = new ProjectInput();
+const activeProjectList = new ProjectList("active");
+const finishedProjectList = new ProjectList("finished");
 //# sourceMappingURL=app.js.map
