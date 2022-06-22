@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 class ProjectState {
     constructor() {
+        this.listeners = [];
         this.projects = [];
     }
     static getInstance() {
@@ -16,6 +17,9 @@ class ProjectState {
         this.instance = new ProjectState();
         return this.instance;
     }
+    addListener(listenerFunction) {
+        this.listeners.push(listenerFunction);
+    }
     addProject(title, description, numberOfPeople) {
         const newProject = {
             id: Math.random().toString(),
@@ -24,6 +28,9 @@ class ProjectState {
             people: numberOfPeople
         };
         this.projects.push(newProject);
+        for (const listenerFunction of this.listeners) {
+            listenerFunction(this.projects.slice());
+        }
     }
 }
 const projectState = ProjectState.getInstance();
@@ -71,6 +78,7 @@ class ProjectList {
         const importedNode = document.importNode(this.templateElement.content, true);
         this.element = importedNode.firstElementChild;
         this.element.id = `${this.type}-projects`;
+        projectState.addListener(() => { });
         this.attach();
         this.renderContent();
     }
