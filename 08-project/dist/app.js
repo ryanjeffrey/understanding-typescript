@@ -49,6 +49,10 @@ class ProjectList {
         const importedNode = document.importNode(this.templateElement.content, true);
         this.element = importedNode.firstElementChild;
         this.element.id = `${this.type}-projects`;
+        this.attach();
+    }
+    attach() {
+        this.hostElement.insertAdjacentElement("beforeend", this.element);
     }
 }
 class ProjectInput {
