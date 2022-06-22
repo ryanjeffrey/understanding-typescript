@@ -19,6 +19,7 @@ class ProjectState {
         this.projects.push(newProject);
     }
 }
+const projectState = new ProjectState();
 function validate(validatableInput) {
     let isValid = true;
     if (validatableInput.required) {
