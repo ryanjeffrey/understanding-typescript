@@ -105,6 +105,7 @@ class ProjectList {
       "project-list"
     )! as HTMLTemplateElement;
     this.hostElement = document.getElementById("app")! as HTMLDivElement;
+    this.assignedProjects = [];
 
     const importedNode = document.importNode(
       this.templateElement.content,
@@ -115,10 +116,20 @@ class ProjectList {
 
       projectState.addListener((projects: any[]) => {
         this.assignedProjects = projects;
+        this.renderProjects();
       });
 
     this.attach();
     this.renderContent();
+  }
+
+  private renderProjects() {
+    const listElement = document.getElementById(`${this.type}-projects-list`)! as HTMLUListElement;
+    for (const projectItem of this.assignedProjects) {
+      const listItem = document.createElement("li");
+      listItem.textContent = projectItem.title;
+      listElement.appendChild(listItem)
+    }
   }
 
   private attach() {
