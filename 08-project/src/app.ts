@@ -11,6 +11,8 @@ class Project {
 }
 
 // Project State Management
+type Listener = (items: Project[]) => void;
+
 class ProjectState {
   private listeners: any[] = [];
   private projects: Project[] = [];
