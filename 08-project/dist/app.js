@@ -79,6 +79,17 @@ function autobind(_, _2, descriptor) {
     };
     return adjustedDescriptor;
 }
+class Component {
+    constructor(templateId, hostElementId, newElementId) {
+        this.templateElement = document.getElementById(templateId);
+        this.hostElement = document.getElementById(hostElementId);
+        const importedNode = document.importNode(this.templateElement.content, true);
+        this.element = importedNode.firstElementChild;
+        if (newElementId) {
+            this.element.id = newElementId;
+        }
+    }
+}
 class ProjectList {
     constructor(type) {
         this.type = type;
