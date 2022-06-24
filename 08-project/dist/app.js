@@ -35,12 +35,7 @@ class ProjectState {
         this.listeners.push(listenerFunction);
     }
     addProject(title, description, numberOfPeople) {
-        const newProject = {
-            id: Math.random().toString(),
-            title: title,
-            description: description,
-            people: numberOfPeople
-        };
+        const newProject = new Project(Math.random().toString(), title, description, numberOfPeople, ProjectStatus.Active);
         this.projects.push(newProject);
         for (const listenerFunction of this.listeners) {
             listenerFunction(this.projects.slice());
