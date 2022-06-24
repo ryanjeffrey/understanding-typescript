@@ -14,7 +14,7 @@ class Project {
 type Listener = (items: Project[]) => void;
 
 class ProjectState {
-  private listeners: any[] = [];
+  private listeners: Listener[] = [];
   private projects: Project[] = [];
   private static instance: ProjectState;
 
@@ -30,7 +30,7 @@ class ProjectState {
     return this.instance;
   }
 
-  addListener(listenerFunction: Function) {
+  addListener(listenerFunction: Listener) {
     this.listeners.push(listenerFunction);
   }
 
