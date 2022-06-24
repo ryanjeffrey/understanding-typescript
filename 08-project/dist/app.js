@@ -94,26 +94,12 @@ class Component {
         this.hostElement.insertAdjacentElement(insertAtStart ? "afterbegin" : "beforeend", this.element);
     }
 }
-class ProjectList {
+class ProjectList extends Component {
     constructor(type) {
+        super("project-list", "app", false, `${type}-projects`);
         this.type = type;
-        this.templateElement = document.getElementById("project-list");
-        this.hostElement = document.getElementById("app");
         this.assignedProjects = [];
-        const importedNode = document.importNode(this.templateElement.content, true);
-        this.element = importedNode.firstElementChild;
-        this.element.id = `${this.type}-projects`;
-        projectState.addListener((projects) => {
-            const relevantProjects = projects.filter(prj => {
-                if (this.type === "active") {
-                    return prj.status === ProjectStatus.Active;
-                }
-                return prj.status === ProjectStatus.Finished;
-            });
-            this.assignedProjects = relevantProjects;
-            this.renderProjects();
-        });
-        this.attach();
+        this.configure();
         this.renderContent();
     }
     renderProjects() {
@@ -125,9 +111,19 @@ class ProjectList {
             listElement.appendChild(listItem);
         }
     }
-    attach() {
-        this.hostElement.insertAdjacentElement("beforeend", this.element);
+    configure() {
+        projectState.addListener((projects) => {
+            const relevantProjects = projects.filter(prj => {
+                if (this.type === "active") {
+                    return prj.status === ProjectStatus.Active;
+                }
+                return prj.status === ProjectStatus.Finished;
+            });
+            this.assignedProjects = relevantProjects;
+            this.renderProjects();
+        });
     }
+    ;
     renderContent() {
         const listId = `${this.type}-projects-list`;
         this.element.querySelector("ul").id = listId;
