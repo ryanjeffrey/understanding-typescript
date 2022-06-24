@@ -80,7 +80,7 @@ function autobind(_, _2, descriptor) {
     return adjustedDescriptor;
 }
 class Component {
-    constructor(templateId, hostElementId, newElementId) {
+    constructor(templateId, hostElementId, insertAtStart, newElementId) {
         this.templateElement = document.getElementById(templateId);
         this.hostElement = document.getElementById(hostElementId);
         const importedNode = document.importNode(this.templateElement.content, true);
@@ -88,6 +88,10 @@ class Component {
         if (newElementId) {
             this.element.id = newElementId;
         }
+        this.attach(insertAtStart);
+    }
+    attach(insertAtStart) {
+        this.hostElement.insertAdjacentElement(insertAtStart ? "afterbegin" : "beforeend", this.element);
     }
 }
 class ProjectList {
