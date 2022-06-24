@@ -143,6 +143,9 @@ abstract class Component<T extends HTMLElement, U extends HTMLElement> {
       this.element
     );
   }
+
+  abstract configure(): void;
+  abstract renderContent(): void;
 }
 
 // ProjectList class
