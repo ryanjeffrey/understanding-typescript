@@ -48,6 +48,7 @@ class ProjectState extends State {
         const project = this.projects.find(project => project.id === projectId);
         if (project) {
             project.status = newStatus;
+            this.updateListeners();
         }
     }
     updateListeners() {
