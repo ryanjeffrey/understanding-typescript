@@ -46,6 +46,12 @@ class ProjectState extends State {
             listenerFunction(this.projects.slice());
         }
     }
+    moveProject(projectId, newStatus) {
+        const project = this.projects.find(project => project.id === projectId);
+        if (project) {
+            project.status = newStatus;
+        }
+    }
 }
 const projectState = ProjectState.getInstance();
 function validate(validatableInput) {

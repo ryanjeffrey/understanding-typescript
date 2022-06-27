@@ -62,6 +62,13 @@ class ProjectState extends State<Project> {
       listenerFunction(this.projects.slice());
     }
   }
+
+  moveProject(projectId: string, newStatus: ProjectStatus) {
+    const project = this.projects.find(project => project.id === projectId);
+    if (project) {
+      project.status = newStatus;
+    }
+  }
 }
 
 const projectState = ProjectState.getInstance();
