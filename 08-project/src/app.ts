@@ -58,9 +58,7 @@ class ProjectState extends State<Project> {
       ProjectStatus.Active
     );
     this.projects.push(newProject);
-    for (const listenerFunction of this.listeners) {
-      listenerFunction(this.projects.slice());
-    }
+    this.updateListeners();
   }
 
   moveProject(projectId: string, newStatus: ProjectStatus) {
@@ -68,6 +66,12 @@ class ProjectState extends State<Project> {
     if (project) {
       project.status = newStatus;
     }
+  }
+
+  private updateListeners() {
+    for (const listenerFunction of this.listeners) {
+      listenerFunction(this.projects.slice());
+    }    
   }
 }
 

@@ -42,14 +42,17 @@ class ProjectState extends State {
     addProject(title, description, numberOfPeople) {
         const newProject = new Project(Math.random().toString(), title, description, numberOfPeople, ProjectStatus.Active);
         this.projects.push(newProject);
-        for (const listenerFunction of this.listeners) {
-            listenerFunction(this.projects.slice());
-        }
+        this.updateListeners();
     }
     moveProject(projectId, newStatus) {
         const project = this.projects.find(project => project.id === projectId);
         if (project) {
             project.status = newStatus;
+        }
+    }
+    updateListeners() {
+        for (const listenerFunction of this.listeners) {
+            listenerFunction(this.projects.slice());
         }
     }
 }
