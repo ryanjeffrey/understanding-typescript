@@ -159,7 +159,10 @@ class ProjectList extends Component {
             listElement.classList.add("droppable");
         }
     }
-    dropHandler(_) { }
+    dropHandler(event) {
+        const projectId = event.dataTransfer.getData("text/plain");
+        projectState.moveProject(projectId, this.type === "active" ? ProjectStatus.Active : ProjectStatus.Finished);
+    }
     dragLeaveHandler(_) {
         const listElement = this.element.querySelector("ul");
         listElement.classList.remove("droppable");
@@ -196,6 +199,9 @@ class ProjectList extends Component {
 __decorate([
     autobind
 ], ProjectList.prototype, "dragOverHandler", null);
+__decorate([
+    autobind
+], ProjectList.prototype, "dropHandler", null);
 __decorate([
     autobind
 ], ProjectList.prototype, "dragLeaveHandler", null);

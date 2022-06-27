@@ -240,7 +240,14 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement>
     }
   }
 
-  dropHandler(_: DragEvent) {}
+  @autobind
+  dropHandler(event: DragEvent) {
+    const projectId = event.dataTransfer!.getData("text/plain");
+    projectState.moveProject(
+      projectId, 
+      this.type === "active" ? ProjectStatus.Active : ProjectStatus.Finished
+    );
+  }
 
   @autobind
   dragLeaveHandler(_: DragEvent) {
