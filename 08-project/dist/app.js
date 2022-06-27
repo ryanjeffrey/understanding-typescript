@@ -115,7 +115,8 @@ class ProjectItem extends Component {
         }
     }
     dragStartHandler(event) {
-        console.log(event);
+        event.dataTransfer.setData("text/plain", this.project.id);
+        event.dataTransfer.effectAllowed = "move";
     }
     dragEndHandler(_) {
         console.log('DragEnd');
