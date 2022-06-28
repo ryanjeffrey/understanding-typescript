@@ -11,7 +11,7 @@ var App;
     (function (ProjectStatus) {
         ProjectStatus[ProjectStatus["Active"] = 0] = "Active";
         ProjectStatus[ProjectStatus["Finished"] = 1] = "Finished";
-    })(ProjectStatus || (ProjectStatus = {}));
+    })(ProjectStatus = App.ProjectStatus || (App.ProjectStatus = {}));
     class Project {
         constructor(id, title, description, people, status) {
             this.id = id;
@@ -21,6 +21,10 @@ var App;
             this.status = status;
         }
     }
+    App.Project = Project;
+})(App || (App = {}));
+var App;
+(function (App) {
     class State {
         constructor() {
             this.listeners = [];
@@ -42,7 +46,7 @@ var App;
             return this.instance;
         }
         addProject(title, description, numberOfPeople) {
-            const newProject = new Project(Math.random().toString(), title, description, numberOfPeople, ProjectStatus.Active);
+            const newProject = new App.Project(Math.random().toString(), title, description, numberOfPeople, App.ProjectStatus.Active);
             this.projects.push(newProject);
             this.updateListeners();
         }
@@ -165,7 +169,7 @@ var App;
         }
         dropHandler(event) {
             const projectId = event.dataTransfer.getData("text/plain");
-            projectState.moveProject(projectId, this.type === "active" ? ProjectStatus.Active : ProjectStatus.Finished);
+            projectState.moveProject(projectId, this.type === "active" ? App.ProjectStatus.Active : App.ProjectStatus.Finished);
         }
         dragLeaveHandler(_) {
             const listElement = this.element.querySelector("ul");
@@ -178,9 +182,9 @@ var App;
             projectState.addListener((projects) => {
                 const relevantProjects = projects.filter((prj) => {
                     if (this.type === "active") {
-                        return prj.status === ProjectStatus.Active;
+                        return prj.status === App.ProjectStatus.Active;
                     }
-                    return prj.status === ProjectStatus.Finished;
+                    return prj.status === App.ProjectStatus.Finished;
                 });
                 this.assignedProjects = relevantProjects;
                 this.renderProjects();
@@ -272,4 +276,4 @@ var App;
     new ProjectList("active");
     new ProjectList("finished");
 })(App || (App = {}));
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=bundle.js.map
