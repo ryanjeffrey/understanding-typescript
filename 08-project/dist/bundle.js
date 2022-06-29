@@ -128,7 +128,11 @@ var App;
             this.hostElement.insertAdjacentElement(insertAtStart ? "afterbegin" : "beforeend", this.element);
         }
     }
-    class ProjectItem extends Component {
+    App.Component = Component;
+})(App || (App = {}));
+var App;
+(function (App) {
+    class ProjectItem extends App.Component {
         constructor(hostId, project) {
             super("single-project", hostId, false, project.id);
             this.project = project;
@@ -164,7 +168,7 @@ var App;
     __decorate([
         App.autobind
     ], ProjectItem.prototype, "dragStartHandler", null);
-    class ProjectList extends Component {
+    class ProjectList extends App.Component {
         constructor(type) {
             super("project-list", "app", false, `${type}-projects`);
             this.type = type;
@@ -225,7 +229,7 @@ var App;
     __decorate([
         App.autobind
     ], ProjectList.prototype, "dragLeaveHandler", null);
-    class ProjectInput extends Component {
+    class ProjectInput extends App.Component {
         constructor() {
             super("project-input", "app", true, "user-input");
             this.titleInputElement = this.element.querySelector("#title");
