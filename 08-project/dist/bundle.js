@@ -109,6 +109,10 @@ var App;
         };
         return adjustedDescriptor;
     }
+    App.autobind = autobind;
+})(App || (App = {}));
+var App;
+(function (App) {
     class Component {
         constructor(templateId, hostElementId, insertAtStart, newElementId) {
             this.templateElement = document.getElementById(templateId);
@@ -158,7 +162,7 @@ var App;
         }
     }
     __decorate([
-        autobind
+        App.autobind
     ], ProjectItem.prototype, "dragStartHandler", null);
     class ProjectList extends Component {
         constructor(type) {
@@ -213,13 +217,13 @@ var App;
         }
     }
     __decorate([
-        autobind
+        App.autobind
     ], ProjectList.prototype, "dragOverHandler", null);
     __decorate([
-        autobind
+        App.autobind
     ], ProjectList.prototype, "dropHandler", null);
     __decorate([
-        autobind
+        App.autobind
     ], ProjectList.prototype, "dragLeaveHandler", null);
     class ProjectInput extends Component {
         constructor() {
@@ -278,7 +282,7 @@ var App;
         }
     }
     __decorate([
-        autobind
+        App.autobind
     ], ProjectInput.prototype, "submitHandler", null);
     new ProjectInput();
     new ProjectList("active");
